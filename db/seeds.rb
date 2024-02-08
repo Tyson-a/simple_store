@@ -1,6 +1,6 @@
 # db/seeds.rb
 require 'faker'
-
+require "csv"
 676.times do
   Product.create!(
     title: Faker::Commerce.product_name,
