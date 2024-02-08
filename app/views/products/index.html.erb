@@ -7,7 +7,13 @@
       <strong>Title:</strong> <%= link_to product.title, product %><br>
       <strong>Description:</strong> <%= product.description %><br>
       <strong>Price:</strong> <%= number_to_currency(product.price) %><br>
-      <strong>Stock Quantity:</strong> <%= product.stock_quantity %>
+      <strong>Stock Quantity:</strong> <%= product.stock_quantity %><br>
+
+      <% if product.category %>
+        <strong>Category:</strong> <%= product.category.name %><br>
+      <% else %>
+        <strong>Category:</strong> Not specified<br>
+      <% end %>
     </li>
   <% end %>
 </ul>

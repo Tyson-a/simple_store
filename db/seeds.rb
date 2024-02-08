@@ -1,16 +1,14 @@
 # db/seeds.rb
-require "csv"
+require 'csv'
 
 # Load data from products.csv file
 CSV.foreach(Rails.root.join("db/products.csv"), headers: true) do |row|
   category = Category.find_or_create_by(name: row["category"])
 
   category.products.create(
-    title: row["title"],
+    title: row["name"],
     description: row["description"],
     price: row["price"],
-    stock_quantity: row["stock_quantity"]
+    stock_quantity: row["stock quantity"]
   )
 end
-
-
